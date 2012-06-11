@@ -8,6 +8,7 @@ namespace ForeverRobot.Robots.Projections
     public class Robot
     {
         public string Id { get { return GetRobotIdFromName(Name); } }
+        public string OwnerEMail { get; set; }
         public string Name { get; set; }
         public string ClientType { get; set; }
         public DateTime Created { get; set; }

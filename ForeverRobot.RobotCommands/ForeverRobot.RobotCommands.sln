@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.RobotCommands", "ForeverRobot.RobotCommands\ForeverRobot.RobotCommands.csproj", "{5A82D421-7409-4CE3-91F5-695DD3CE21FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.RobotCommands", "Source\ForeverRobot.RobotCommands\ForeverRobot.RobotCommands.csproj", "{5A82D421-7409-4CE3-91F5-695DD3CE21FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.RobotCommands.Specifications", "..\ForeverRobot.RobotCommands.Specifications\ForeverRobot.RobotCommands.Specifications.csproj", "{42A669C4-317E-4FD5-8131-FB957DBA2162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.RobotCommands.Specifications", "Source\ForeverRobot.RobotCommands.Specifications\ForeverRobot.RobotCommands.Specifications.csproj", "{42A669C4-317E-4FD5-8131-FB957DBA2162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,7 +12,7 @@ namespace ForeverRobot.Robots.CreateRobot
     {
         public CreateRobotModule(IDocumentSession documentSession)
         {
-            Put["/robot/{name}"] = parameters =>
+            Post["/robot/{name}"] = parameters =>
             {
                 var robotResult = documentSession.Load<Robot>(Robot.GetRobotIdFromName(parameters.name));
                 if (robotResult != null)

@@ -22,6 +22,19 @@ namespace ForeverRobot.Robots.Projections
 
                 return Response.AsJson(robotResult as object);
             };
+
+            Get["/robot/byowner/{email}"] = parameters =>
+            {
+                if (string.IsNullOrWhiteSpace(parameters.email))
+                    return HttpStatusCode.BadRequest;
+
+                string email = parameters.email;
+                var robotResult = documentSession.Query<Robot>().FirstOrDefault(x => x.OwnerEMail.Equals(email, StringComparison.CurrentCultureIgnoreCase));
+                if (robotResult == null)
+                    return HttpStatusCode.NotFound;
+
+                return Response.AsJson(robotResult as object);
+            };
         }
     }
 }

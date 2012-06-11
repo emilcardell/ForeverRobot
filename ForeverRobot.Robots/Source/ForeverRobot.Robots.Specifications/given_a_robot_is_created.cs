@@ -18,13 +18,13 @@ namespace ForeverRobot.Robots.Specification
             var bootstrapper = new SpecificationBootstrapper();
             var browser = new Browser(bootstrapper);
 
-            browser.Put("/robot/lasse", with =>
+            browser.Post("/robot/lasse", with =>
             {
                 with.HttpRequest();
                 with.FormValue("ClientType", "mSpec");
             });
 
-            var recreateResult = browser.Put("/robot/lasse", with =>
+            var recreateResult = browser.Post("/robot/lasse", with =>
             {
                 with.HttpRequest();
                 with.FormValue("ClientType", "mSpec");
