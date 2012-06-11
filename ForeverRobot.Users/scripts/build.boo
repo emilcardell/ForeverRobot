@@ -19,7 +19,7 @@ target runSpecifications:
 target setupIIS:
   SetDirectoryPermission(iisPath, "IIS_IUSRS", Phantom.Core.Builtins.PermissionLevel.Full)
   iis7_remove_site(iisSiteName)
-  iis7_create_site(siteName: iisSiteName, path: iisPath, bindingInformation: "*:80:user.foreverrobot.com;*:19100:localhost", bindingProtocol: "http" ) 
+  iis7_create_site(siteName: iisSiteName, path: iisPath, bindingInformation: "*:80:user.foreverrobot.com", bindingProtocol: "http" ) 
     
      
   
