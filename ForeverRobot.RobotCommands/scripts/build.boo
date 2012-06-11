@@ -7,7 +7,7 @@ mSpecRunner = "packages\\Machine.Specifications.0.5.6.0\\tools\\mspec-clr4.exe"
 pathToSpecification = "Source\\ForeverRobot.RobotCommands.Specifications\\bin\\Release\\ForeverRobot.RobotCommands.Specifications.dll"
 iisPath = "Source\\ForeverRobot.RobotCommands\\"
 
-target default, (compile, runSpecifications, setupIIS):
+target default, (compile, setupIIS):
   pass
   
 target compile:
