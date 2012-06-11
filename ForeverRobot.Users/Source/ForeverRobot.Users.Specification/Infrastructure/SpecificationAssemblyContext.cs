@@ -1,6 +1,4 @@
 ﻿using Machine.Specifications;
-using Raven.Client;
-using Raven.Client.Embedded;
 
 namespace ForeverRobot.Users.Specification
 {

@@ -1,6 +1,8 @@
 ﻿using Machine.Specifications;
 using Nancy;
 using Nancy.Testing;
+using Raven.Client;
+using StructureMap;
 
 namespace ForeverRobot.Users.Specification
 {
@@ -44,6 +46,7 @@ namespace ForeverRobot.Users.Specification
             });
 
             RecreateStatusCode = loginRecreateResult.StatusCode;
+
         };
 
         private It should_be_able_to_login_in = () => LoginStatusCode.ShouldEqual(HttpStatusCode.OK);
