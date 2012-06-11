@@ -1,11 +1,13 @@
 import PhantomContrib
+import System.Security.AccessControl
 
-slnFile = "ForeverRobot.Robots.sln"
+slnFile = "ForeverRobot.Robotss.sln"
 iisSiteName = "ForeverRobot.Robot"
 mSpecRunner = "packages\\Machine.Specifications.0.5.6.0\\tools\\mspec-clr4.exe"
 pathToSpecification = "Source\\ForeverRobot.Robots.Specification\\bin\\Release\\ForeverRobot.Robots.Specification.dll"
+iisPath = "Source\\ForeverRobot.Robots\\"
 
-target default(compile, runSpecifications, setupIIS):
+target default, (compile, runSpecifications, setupIIS):
   pass
   
 target compile:
@@ -15,9 +17,12 @@ target runSpecifications:
   exec(mSpecRunner, pathToSpecification)
 
 target setupIIS:
-  if iis_exists(iisSiteName):
-    iis7_remove_site(iisSiteName)
-
-  iis7_create_site(iisSiteName, "http","*:80:robot.foreverrobot.com","Source\\ForeverRobot.Robots\\")
+  SetDirectoryPermission(iisPath, "IIS_IUSRS", Phantom.Core.Builtins.PermissionLevel.Full)
+  iis7_remove_site(iisSiteName)
+  iis7_create_site(siteName: iisSiteName, path: iisPath, bindingInformation: "*:80:robot.foreverrobot.com", bindingProtocol: "http" ) 
+    
+     
+  
+  
  
 
