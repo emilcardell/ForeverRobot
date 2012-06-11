@@ -26,8 +26,6 @@ namespace ForeverRobot.RobotCommands.Projections
                 return Response.AsJson(robotsScanResult.Where(r => r.RobotName != inputModel.RobotName).ToArray());
             };
         }
-
-
     }
 
     public class CreateScanRobotsInputModule

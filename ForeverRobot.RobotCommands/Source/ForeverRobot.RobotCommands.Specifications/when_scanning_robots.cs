@@ -35,9 +35,12 @@ namespace ForeverRobot.RobotCommands.Specifications
             var getResult = browser.Get("/scanRobots/", with =>
             {
               with.HttpRequest();
-              with.FormValue("robotName", "yasuragi"); 
-                with.FormValue("longitude", "");                 
+              with.FormValue("robotName", "yasuragi");
+              with.FormValue("longitude", "18,2435");
+              with.FormValue("latitude", "59,3472");
             });
+
+            DetectedRobots = getResult.Body.DeserializeJson<List<RobotPosition>>();
         };
     }
 }
