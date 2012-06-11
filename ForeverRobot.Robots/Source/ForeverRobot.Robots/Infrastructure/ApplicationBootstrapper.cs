@@ -5,7 +5,7 @@ using TinyHandler;
 
 namespace ForeverRobot.Robots.Infrastructure
 {
-    public class ApplicationBootstrapper : DiscoveryBootstrapper
+    public class ApplicationBootstrapper : StructureMapNancyBootstrapper
     {
         protected override void ConfigureApplicationContainer(StructureMap.IContainer existingContainer)
         {
