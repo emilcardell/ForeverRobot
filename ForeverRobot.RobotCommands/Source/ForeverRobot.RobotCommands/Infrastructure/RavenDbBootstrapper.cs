@@ -3,11 +3,11 @@ using Raven.Client.Document;
 using Raven.Client.Extensions;
 using StructureMap.Configuration.DSL;
 
-namespace ForeverRobot.Robots.Infrastructure
+namespace ForeverRobot.RobotCommands.Infrastructure
 {
     public class RavenDbBootstrapper : Registry
     {
-        private const string TenantName = "Robot";
+        private const string TenantName = "RobotCommand";
         public RavenDbBootstrapper()
         {
 

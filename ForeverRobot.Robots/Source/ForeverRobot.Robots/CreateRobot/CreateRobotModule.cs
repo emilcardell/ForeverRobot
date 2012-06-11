@@ -21,8 +21,8 @@ namespace ForeverRobot.Robots.CreateRobot
                 var inputModel = this.Bind<CreateRobotInputModel>();
                 inputModel.Name = parameters.name;
 
-                var result = new CreateRobotInputModelValidator().Validate(inputModel);
-                if (!result.IsValid)
+                var validationResult = new CreateRobotInputModelValidator().Validate(inputModel);
+                if (!validationResult.IsValid)
                     return HttpStatusCode.BadRequest;
 
 

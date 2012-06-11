@@ -1,9 +1,8 @@
-﻿using ForeverRobot.Robots.CreateRobot;
-using ForeverRobot.Robots.Infrastructure;
+﻿using ForeverRobot.RobotCommands.DropRobot;
 using Nancy.Bootstrappers.StructureMap;
 using TinyHandler;
 
-namespace ForeverRobot.Robots.Infrastructure
+namespace ForeverRobot.RobotCommands.Infrastructure
 {
     public class ApplicationBootstrapper : StructureMapNancyBootstrapper
     {
@@ -11,7 +10,7 @@ namespace ForeverRobot.Robots.Infrastructure
         {
             base.ConfigureApplicationContainer(existingContainer);
             existingContainer.Configure(x => x.AddRegistry<RavenDbBootstrapper>());
-            existingContainer.Configure(x => x.For<HandlerModule<RobotCreatedEvent>>().Use<RobotCreatedEventHandler>());
+            existingContainer.Configure(x => x.For<HandlerModule<RobotDroppedEvent>>().Use<RobotDroppedEventHandler>());
             HandlerCentral.Container = existingContainer;
         }
     }

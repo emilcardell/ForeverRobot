@@ -1,12 +1,12 @@
 ﻿using Nancy;
 
-namespace ForeverRobot.Robots.Infrastructure
+namespace ForeverRobot.RobotCommands.Infrastructure
 {
     public class ServiceStatusModule : NancyModule
     {
         public ServiceStatusModule()
         {
-            Get["/"] = _ => { return "Forever Robot - Robot service is up and running."; };
+            Get["/"] = _ => { return "Forever Robot - RobotCommand service is up and running."; };
         }
     }
 }
