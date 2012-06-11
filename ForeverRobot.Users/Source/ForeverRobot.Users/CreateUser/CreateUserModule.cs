@@ -12,7 +12,7 @@ namespace ForeverRobot.Users.CreateUser
     {
         public CreateUserModule(IDocumentSession documentSession)
         {
-            Put["/user/{email}"] = parameters =>
+            Post["/user/{email}"] = parameters =>
             {
                 var inputModel = this.Bind<CreateUserInputModel>();
                 new CreateUserInputModelValidator().ValidateAndThrow(inputModel);

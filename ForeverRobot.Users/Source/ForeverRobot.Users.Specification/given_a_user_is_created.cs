@@ -13,10 +13,10 @@ namespace ForeverRobot.Users.Specification
 
         Establish context = () =>
         {
-             var bootstrapper = new SpecificationBootstrapper();
+            var bootstrapper = new SpecificationBootstrapper();
             var browser = new Browser(bootstrapper);
 
-            browser.Put("/User/user@host.com", with =>
+            browser.Post("/User/user@host.com", with =>
             {
                 with.HttpRequest();
                 with.FormValue("password", "firstPassword");
@@ -32,7 +32,7 @@ namespace ForeverRobot.Users.Specification
             LoginStatusCode = loginResult.StatusCode;
 
 
-            browser.Put("/User/user@host.com", with =>
+            browser.Post("/User/user@host.com", with =>
             {
                 with.HttpRequest();
                 with.FormValue("password", "secondPassword");
