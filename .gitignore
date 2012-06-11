@@ -1,0 +1,13 @@
+*.user
+*.suo
+*~
+._*
+_ReSharper.*
+*.dotCover
+*.swp
+.idea
+Bin
+Obj
+obj
+bin 
+

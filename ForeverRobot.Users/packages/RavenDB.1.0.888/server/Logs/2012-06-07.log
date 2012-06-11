@@ -1,0 +1,94 @@
+time;logger;level;message;exception
+2012-06-07 14:14:20.2866;Raven.Database.Impl.DocumentCacher;Info;"MemoryCache Settings:
+  PhysicalMemoryLimit = 99
+  CacheMemoryLimit    = 3213885440
+  PollingInterval     = 00:02:00";
+2012-06-07 14:14:20.3226;Raven.Storage.Esent.TransactionalStorage;Info;"Esent Settings:
+  MaxVerPages      = 32768
+  CacheSizeMax     = 262144
+  DatabasePageSize = 4096";
+2012-06-07 14:14:21.4935;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Backup/Status' was not found;
+2012-06-07 14:14:21.5775;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 0, for: IndexingExecuter, will wait for additional work;
+2012-06-07 14:14:21.5795;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 0, for: ReducingExecuter, will wait for additional work;
+2012-06-07 14:16:01.6015;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Databases/user' was not found;
+2012-06-07 14:16:01.8234;Raven.Database.Server.HttpServer;Warn;Error on request;"Raven.Database.Exceptions.BadRequestException: Could not find a database named: user
+   at Raven.Database.Server.HttpServer.SetupRequestToProperDatabase(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 642
+   at Raven.Database.Server.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 513
+   at Raven.Database.Server.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 315"
+2012-06-07 14:16:01.8704;Raven.Database.Server.HttpServer;Debug;Request #   1: GET     -   278 ms -            - 400 - /databases/user/docs/Raven/Replication/Destinations;
+2012-06-07 14:16:01.8844;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:16:01.8844;Raven.Database.Server.HttpServer;Debug;Request #   2: GET     -    13 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:16:02.9903;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:16:02.9903;Raven.Database.Server.HttpServer;Debug;Request #   3: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:16:03.1763;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Databases/user' was not found;
+2012-06-07 14:16:03.1763;Raven.Database.Server.HttpServer;Warn;Error on request;"Raven.Database.Exceptions.BadRequestException: Could not find a database named: user
+   at Raven.Database.Server.HttpServer.SetupRequestToProperDatabase(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 642
+   at Raven.Database.Server.HttpServer.DispatchRequest(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 513
+   at Raven.Database.Server.HttpServer.HandleActualRequest(IHttpContext ctx) in c:\Builds\RavenDB-Stable\Raven.Database\Server\HttpServer.cs:line 315"
+2012-06-07 14:16:03.1763;Raven.Database.Server.HttpServer;Debug;Request #   4: GET     -     0 ms - <default>  - 400 - /databases/user/docs/user/user@host.com;
+2012-06-07 14:17:42.6864;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:17:42.6864;Raven.Database.Server.HttpServer;Debug;Request #   5: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:17:44.0342;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:17:44.0342;Raven.Database.Server.HttpServer;Debug;Request #   6: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:17:44.2282;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:17:44.2282;Raven.Database.Server.HttpServer;Debug;Request #   7: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:17:44.2532;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:17:44.2532;Raven.Database.Server.HttpServer;Debug;Request #   8: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:17:44.2592;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:17:44.2592;Raven.Database.Server.HttpServer;Debug;Request #   9: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:19:57.9096;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:19:57.9096;Raven.Database.Server.HttpServer;Debug;Request #  10: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:19:59.9186;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:19:59.9186;Raven.Database.Server.HttpServer;Debug;Request #  11: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:20:00.2766;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:20:00.2766;Raven.Database.Server.HttpServer;Debug;Request #  12: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:20:28.8786;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:20:28.8786;Raven.Database.Server.HttpServer;Debug;Request #  13: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:20:28.9706;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:20:28.9706;Raven.Database.Server.HttpServer;Debug;Request #  14: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:21:48.0996;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:21:49.5926;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was not found;
+2012-06-07 14:21:48.0996;Raven.Database.Server.HttpServer;Debug;Request #  15: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:21:49.5926;Raven.Database.Server.HttpServer;Debug;Request #  16: GET     -     0 ms - <default>  - 404 - /docs/user/user@host.com;
+2012-06-07 14:21:50.9766;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Inserted a new document with key 'UserCreatedEvents/380b7751-fd81-488f-a740-20e860552ae4', update: False, ;
+2012-06-07 14:21:50.9766;Raven.Database.DocumentDatabase;Debug;Put document UserCreatedEvents/380b7751-fd81-488f-a740-20e860552ae4 with etag 00000000-0000-0100-0000-000000000001;
+2012-06-07 14:21:50.9766;Raven.Database.Indexing.WorkContext;Debug;Incremented work counter to 1 because: PUT UserCreatedEvents/380b7751-fd81-488f-a740-20e860552ae4;
+2012-06-07 14:21:50.9766;Raven.Database.DocumentDatabase;Debug;Successfully executed 1 commands in 00:00:00.0644468;
+2012-06-07 14:21:50.9856;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 1, for: ReducingExecuter, will wait for additional work;
+2012-06-07 14:21:50.9856;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 1, for: IndexingExecuter, will wait for additional work;
+2012-06-07 14:21:51.0226;Raven.Database.Server.HttpServer;Debug;Request #  17: POST    -   169 ms - <default>  - 200 - /bulk_docs;
+2012-06-07 14:21:51.0226;Raven.Database.Server.HttpServer;Debug;"	PUT UserCreatedEvents/380b7751-fd81-488f-a740-20e860552ae4
+";
+2012-06-07 14:21:51.2006;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Inserted a new document with key 'user/user@host.com', update: False, ;
+2012-06-07 14:21:51.2006;Raven.Database.DocumentDatabase;Debug;Put document user/user@host.com with etag 00000000-0000-0100-0000-000000000002;
+2012-06-07 14:21:51.2006;Raven.Database.Indexing.WorkContext;Debug;Incremented work counter to 2 because: PUT user/user@host.com;
+2012-06-07 14:21:51.2006;Raven.Database.DocumentDatabase;Debug;Successfully executed 1 commands in 00:00:00.0010889;
+2012-06-07 14:21:51.2006;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 2, for: ReducingExecuter, will wait for additional work;
+2012-06-07 14:21:51.2006;Raven.Database.Indexing.WorkContext;Debug;No work was found, workerWorkCounter: 2, for: IndexingExecuter, will wait for additional work;
+2012-06-07 14:21:51.2006;Raven.Database.Server.HttpServer;Debug;Request #  18: POST    -     1 ms - <default>  - 200 - /bulk_docs;
+2012-06-07 14:21:51.2006;Raven.Database.Server.HttpServer;Debug;"	PUT user/user@host.com
+";
+2012-06-07 14:21:51.3526;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:21:51.4136;Raven.Database.Server.HttpServer;Debug;Request #  19: GET     -    61 ms - <default>  - 200 - /docs/user/user@host.com;
+2012-06-07 14:21:51.4956;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:21:51.4956;Raven.Database.Server.HttpServer;Debug;Request #  20: GET     -     4 ms - <default>  - 304 - /docs/user/user@host.com;
+2012-06-07 14:22:31.5596;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:22:31.5596;Raven.Database.Server.HttpServer;Debug;Request #  21: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:22:32.9356;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:22:32.9356;Raven.Database.Server.HttpServer;Debug;Request #  22: GET     -     0 ms - <default>  - 200 - /docs/user/user@host.com;
+2012-06-07 14:23:40.7720;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:23:40.7720;Raven.Database.Server.HttpServer;Debug;Request #  23: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:23:42.0993;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:23:42.0993;Raven.Database.Server.HttpServer;Debug;Request #  24: GET     -     0 ms - <default>  - 200 - /docs/user/user@host.com;
+2012-06-07 14:30:37.0010;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:30:37.0010;Raven.Database.Server.HttpServer;Debug;Request #  25: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:30:38.6232;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:30:38.6232;Raven.Database.Server.HttpServer;Debug;Request #  26: GET     -     0 ms - <default>  - 200 - /docs/user/user@host.com;
+2012-06-07 14:34:18.4542;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:34:18.4542;Raven.Database.Server.HttpServer;Debug;Request #  27: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:34:29.0942;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'user/user@host.com' was found;
+2012-06-07 14:34:29.0942;Raven.Database.Server.HttpServer;Debug;Request #  28: GET     -     0 ms - <default>  - 200 - /docs/user/user@host.com;
+2012-06-07 14:38:54.6268;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:38:54.6268;Raven.Database.Server.HttpServer;Debug;Request #  29: GET     -     1 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
+2012-06-07 14:40:26.4884;Raven.Storage.Esent.StorageActions.DocumentStorageActions;Debug;Document with key 'Raven/Replication/Destinations' was not found;
+2012-06-07 14:40:26.4884;Raven.Database.Server.HttpServer;Debug;Request #  30: GET     -     0 ms - <default>  - 404 - /docs/Raven/Replication/Destinations;
