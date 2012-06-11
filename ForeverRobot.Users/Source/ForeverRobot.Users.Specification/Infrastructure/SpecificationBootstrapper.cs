@@ -8,7 +8,7 @@ using TinyHandler;
 
 namespace ForeverRobot.Users.Specification
 {
-    public class SpecificationBootstrapper : ApplicationBootstrapper
+    public class SpecificationBootstrapper : DiscoveryBootstrapper
     {
         protected override void ConfigureApplicationContainer(StructureMap.IContainer existingContainer)
         {
