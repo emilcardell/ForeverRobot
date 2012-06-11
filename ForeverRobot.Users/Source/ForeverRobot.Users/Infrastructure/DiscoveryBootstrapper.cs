@@ -2,7 +2,7 @@
 
 namespace ForeverRobot.Users.Infrastructure
 {
-    public class DiscoveryBootstrapper : StructureMapNancyBootstrapper
+    public class DiscoveryBootstrapper : StructureMapNancyBootstrapper 
     {
     }
 }

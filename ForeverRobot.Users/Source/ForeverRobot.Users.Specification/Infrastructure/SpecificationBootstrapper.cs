@@ -1,5 +1,6 @@
 ﻿using ForeverRobot.Users.CreateUser;
 using ForeverRobot.Users.Infrastructure;
+using Nancy.Bootstrappers.StructureMap;
 using Nancy.Testing.Fakes;
 using Raven.Client;
 using Raven.Client.Embedded;
