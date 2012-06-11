@@ -1,32 +1,30 @@
 ﻿using System;
-
 using FluentValidation;
 using Nancy;
-using Raven.Client;
 using Nancy.ModelBinding;
 using TinyHandler;
 
-namespace ForeverRobot.RobotCommands.DropRobot
+namespace ForeverRobot.RobotCommands.MoveRobot
 {
-    public class DropRobotModule : NancyModule
+    public class MoveRobotModule : NancyModule
     {
-        public DropRobotModule()
+        public MoveRobotModule()
         {
-            Post["/robot/command/drop/{robotname}"] = parameters =>
+            Post["/robot/command/move/{robotname}"] = parameters =>
             {
-                var inputModel = this.Bind<CreateDropRobotInputModule>();
+                var inputModel = this.Bind<CreateMoveRobotInputModule>();
                 inputModel.RobotName = parameters.robotname;
 
-                var validationResult = new CreateRobotInputModelValidator().Validate(inputModel);
+                var validationResult = new CreateMoveRobotInputModelValidator().Validate(inputModel);
                 if (!validationResult.IsValid)
                     return HttpStatusCode.BadRequest;
 
-                var robotDroppedEvent = RobotDroppedEvent.Create(inputModel.RobotName,
+                var robotMovedEvent = RobotMovedEvent.Create(inputModel.RobotName,
                     inputModel.Longitude,
                     inputModel.Latitude);
                 try
                 {
-                    HandlerCentral.Process(robotDroppedEvent);
+                    HandlerCentral.Process(robotMovedEvent);
                 }
                 catch(Exception)
                 {
@@ -37,7 +35,7 @@ namespace ForeverRobot.RobotCommands.DropRobot
             };
         }
 
-        public class CreateDropRobotInputModule 
+        public class CreateMoveRobotInputModule 
         {
             public string RobotName { get; set; }
             public Double Longitude { get; set; }
@@ -45,16 +43,14 @@ namespace ForeverRobot.RobotCommands.DropRobot
         }
 
 
-        public class CreateRobotInputModelValidator : AbstractValidator<CreateDropRobotInputModule>
+        public class CreateMoveRobotInputModelValidator : AbstractValidator<CreateMoveRobotInputModule>
         {
-            public CreateRobotInputModelValidator()
+            public CreateMoveRobotInputModelValidator()
             {
                 RuleFor(inputModel => inputModel.RobotName).NotEmpty();
                 RuleFor(inputModel => inputModel.Longitude).NotEmpty();
                 RuleFor(inputModel => inputModel.Latitude).NotEmpty();
             }
         }
-
-        
     }
 }

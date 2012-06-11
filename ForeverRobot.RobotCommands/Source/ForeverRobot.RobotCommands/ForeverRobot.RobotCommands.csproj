@@ -91,6 +91,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisconnectRobot\DisconnectRobotModule.cs" />
+    <Compile Include="DisconnectRobot\RobotDisconnectedEvent.cs" />
+    <Compile Include="DisconnectRobot\RobotDisconnectedEventHandler.cs" />
     <Compile Include="DropRobot\DropRobotModule.cs" />
     <Compile Include="Infrastructure\IRobotCommandEvent.cs" />
     <Compile Include="DropRobot\RobotDroppedEvent.cs" />
@@ -99,12 +102,19 @@
     <Compile Include="Infrastructure\DiscoveryBootstrapper.cs" />
     <Compile Include="Infrastructure\RavenDbBootstrapper.cs" />
     <Compile Include="Infrastructure\ServiceStatusModule.cs" />
-    <Compile Include="Projection\RobotPosition.cs" />
+    <Compile Include="MoveRobot\MoveRobotModule.cs" />
+    <Compile Include="MoveRobot\RobotMovedEvent.cs" />
+    <Compile Include="MoveRobot\RobotMovedEventHandler.cs" />
+    <Compile Include="Projections\RobotPosition.cs" />
+    <Compile Include="Projections\RobotPositionModule.cs" />
+    <Compile Include="Projections\RobotPositions_ByNameAndLocation.cs" />
+    <Compile Include="Projections\ScanRobotsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

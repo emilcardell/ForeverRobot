@@ -6,7 +6,7 @@ using Nancy.Testing;
 
 namespace ForeverRobot.RobotCommands.Specifications
 {
-    class when_a_robot_is_dropped
+    class when_a_robot_is_disconnected
     {
         private static HttpStatusCode DropStatusCode;
 
@@ -17,7 +17,7 @@ namespace ForeverRobot.RobotCommands.Specifications
             var bootstrapper = new SpecificationBootstrapper();
             var browser = new Browser(bootstrapper);
 
-            var dropResult = browser.Post("/robot/command/drop/yasuragi", with =>
+            var dropResult = browser.Post("/robot/command/disconnect/yasuragi", with =>
             {
                 with.HttpRequest();
                 with.FormValue("Longitude", "18,2435");
@@ -41,6 +41,6 @@ namespace ForeverRobot.RobotCommands.Specifications
 
         private It should_be_the_same_latitude = () => RobotPositionResult.Latitude.Equals("59,3472");
         private It should_be_the_same_longitude = () => RobotPositionResult.Longitude.Equals("18,2435");
-        private It should_be_online = () => RobotPositionResult.Online.Equals(true);
+        private It should_be_disconnected = () => RobotPositionResult.Online.Equals(false);
     }
 }

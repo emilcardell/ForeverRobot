@@ -128,7 +128,10 @@
     <Compile Include="Infrastructure\SpecificationAssemblyContext.cs" />
     <Compile Include="Infrastructure\SpecificationBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_a_robot_is_disconnected.cs" />
     <Compile Include="when_a_robot_is_dropped.cs" />
+    <Compile Include="when_a_robot_is_moved.cs" />
+    <Compile Include="when_scanning_robots.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

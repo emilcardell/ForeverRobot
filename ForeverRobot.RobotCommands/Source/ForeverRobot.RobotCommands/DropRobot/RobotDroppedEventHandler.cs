@@ -1,6 +1,8 @@
 ﻿using System;
+using ForeverRobot.RobotCommands.Projections;
 using Raven.Client;
 using TinyHandler;
+using ForeverRobot.RobotCommands.Projections;
 
 
 namespace ForeverRobot.RobotCommands.DropRobot
@@ -22,6 +24,26 @@ namespace ForeverRobot.RobotCommands.DropRobot
                     documentSession.Store(robotDroppedEvent);
                     documentSession.SaveChanges();
                 }
+            };
+
+            Dispatch = robotDroppedEvent =>
+            {
+
+                using (var documentSession = documentStore.OpenSession())
+                {
+                    var robotPosition = new RobotPosition()
+                    {
+                        RobotName = robotDroppedEvent.RobotName,
+                        LastUpdate = robotDroppedEvent.Occurred,
+                        Latitude = robotDroppedEvent.Latitude,
+                        Longitude = robotDroppedEvent.Longitude,
+                        Online = true
+                    };
+
+                    documentSession.Store(robotPosition);
+                    documentSession.SaveChanges();
+                }
+
             };
         }
     }
