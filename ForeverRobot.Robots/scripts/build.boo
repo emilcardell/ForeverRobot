@@ -4,7 +4,7 @@ import System.Security.AccessControl
 slnFile = "ForeverRobot.Robots.sln"
 iisSiteName = "ForeverRobot.Robot"
 mSpecRunner = "packages\\Machine.Specifications.0.5.6.0\\tools\\mspec-clr4.exe"
-pathToSpecification = "Source\\ForeverRobot.Robots.Specification\\bin\\Release\\ForeverRobot.Robots.Specification.dll"
+pathToSpecification = "Source\\ForeverRobot.Robots.Specifications\\bin\\Release\\ForeverRobot.Robots.Specifications.dll"
 iisPath = "Source\\ForeverRobot.Robots\\"
 
 target default, (compile, runSpecifications, setupIIS):
