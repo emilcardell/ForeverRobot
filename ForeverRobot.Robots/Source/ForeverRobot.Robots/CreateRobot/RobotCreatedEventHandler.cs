@@ -36,7 +36,8 @@ namespace ForeverRobot.Robots.CreateRobot
                     {
                         Name = robotCreatedEvent.Name,
                         ClientType = robotCreatedEvent.ClientType,
-                        Created = robotCreatedEvent.Created
+                        Created = robotCreatedEvent.Created,
+                        OwnerEMail = robotCreatedEvent.OwnerEMail
                     };
 
                     documentSession.Store(robot);

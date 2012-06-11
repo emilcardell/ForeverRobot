@@ -1,6 +1,6 @@
 ﻿using Nancy.Bootstrappers.StructureMap;
 
-namespace ForeverRobot.Robots.Infrastructure
+namespace ForeverRobot.RobotCommands.Infrastructure
 {
     public class DiscoveryBootstrapper : StructureMapNancyBootstrapper
     {

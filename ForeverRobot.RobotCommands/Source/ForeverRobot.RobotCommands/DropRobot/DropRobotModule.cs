@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+
 using FluentValidation;
 using Nancy;
 using Raven.Client;
+using Nancy.ModelBinding;
+using TinyHandler;
 
 namespace ForeverRobot.RobotCommands.DropRobot
 {
@@ -12,11 +12,27 @@ namespace ForeverRobot.RobotCommands.DropRobot
     {
         public DropRobotModule(IDocumentSession documentSession)
         {
-            //Post["/robot/command/{name}"] = parameters =>
-            //                                    {
+            Post["/robot/command/drop"] = parameters =>
+            {
+                var inputModel = this.Bind<CreateDropRobotInputModule>();
 
-            //                                        var robotDroppedEvent = RobotDroppedEvent.Create();
-            //                                    };
+                var validationResult = new CreateRobotInputModelValidator().Validate(inputModel);
+                if (!validationResult.IsValid)
+                    return HttpStatusCode.BadRequest;
+
+                var robotDroppedEvent = RobotDroppedEvent.Create(inputModel.RobotName, inputModel.Longitude,
+                                                                 inputModel.Latitude);
+                try
+                {
+                    HandlerCentral.Process(robotDroppedEvent);
+                }
+                catch(Exception)
+                {
+                    return HttpStatusCode.BadRequest;
+                }
+
+                return HttpStatusCode.Created;
+            };
         }
 
         public class CreateDropRobotInputModule 
@@ -34,7 +50,6 @@ namespace ForeverRobot.RobotCommands.DropRobot
                 RuleFor(inputModel => inputModel.RobotName).NotEmpty();
                 RuleFor(inputModel => inputModel.Longitude).NotEmpty();
                 RuleFor(inputModel => inputModel.Latitude).NotEmpty();
-                //RuleFor(inputModel => inputModel.Password).NotEmpty().Length(4, 1024);
             }
         }
 

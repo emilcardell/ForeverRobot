@@ -91,8 +91,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DropRobot\DropRobotModule.cs" />
+    <Compile Include="Infrastructure\IRobotCommandEvent.cs" />
     <Compile Include="DropRobot\RobotDroppedEvent.cs" />
     <Compile Include="DropRobot\RobotDroppedEventHandler.cs" />
+    <Compile Include="Infrastructure\ApplicationBootstrapper.cs" />
+    <Compile Include="Infrastructure\DiscoveryBootstrapper.cs" />
+    <Compile Include="Infrastructure\RavenDbBootstrapper.cs" />
+    <Compile Include="Infrastructure\ServiceStatusModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

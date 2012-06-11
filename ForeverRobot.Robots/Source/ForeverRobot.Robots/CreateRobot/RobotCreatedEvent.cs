@@ -20,6 +20,7 @@ namespace ForeverRobot.Robots.CreateRobot
 
         public Guid Id { get; set; }
         public DateTime Created { get; set; }
+        public string OwnerEMail { get; set; }
         public string Name { get; set; }
         public string ClientType { get; set; }
 
