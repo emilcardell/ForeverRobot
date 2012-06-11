@@ -15,8 +15,9 @@ namespace ForeverRobot.Users.CreateUser
             Post["/user/{email}"] = parameters =>
             {
                 var inputModel = this.Bind<CreateUserInputModel>();
+                inputModel.EMail = parameters.email;
                 new CreateUserInputModelValidator().ValidateAndThrow(inputModel);
-                
+
                 var userCreatedEvent = UserCreatedEvent.Create(inputModel.EMail, inputModel.Password);
                 try
                 {
