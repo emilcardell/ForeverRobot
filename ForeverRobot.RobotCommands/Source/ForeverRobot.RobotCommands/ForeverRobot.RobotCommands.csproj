@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="DropRobot\RobotDroppedEvent.cs" />
     <Compile Include="DropRobot\RobotDroppedEventHandler.cs" />
+    <Compile Include="FireAtRobot\FireAtRobotModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
