@@ -32,7 +32,12 @@ namespace ForeverRobot.RobotCommands.Specifications
                 with.FormValue("Latitude", "60,3472");
             });
 
-           // var getResult = 
+            var getResult = browser.Get("/scanRobots/", with =>
+            {
+              with.HttpRequest();
+              with.FormValue("robotName", "yasuragi"); 
+                with.FormValue("longitude", "");                 
+            });
         };
     }
 }
