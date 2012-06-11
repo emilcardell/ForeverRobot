@@ -1,5 +1,6 @@
 ﻿using ForeverRobot.Users.CreateUser;
 using ForeverRobot.Users.Infrastructure;
+using Nancy.Bootstrappers.StructureMap;
 using Nancy.Testing.Fakes;
 using Raven.Client;
 using Raven.Client.Embedded;
@@ -7,7 +8,7 @@ using TinyHandler;
 
 namespace ForeverRobot.Users.Specification
 {
-    public class SpecificationBootstrapper : DiscoveryBootstrapper
+    public class SpecificationBootstrapper : ApplicationBootstrapper
     {
         protected override void ConfigureApplicationContainer(StructureMap.IContainer existingContainer)
         {

@@ -106,7 +106,6 @@
     <Compile Include="CreateUser\CreateUserModule.cs" />
     <Compile Include="CreateUser\UserCreatedEvent.cs" />
     <Compile Include="CreateUser\UserCreatedEventHandler.cs" />
-    <Compile Include="Infrastructure\DiscoveryBootstrapper.cs" />
     <Compile Include="Infrastructure\ServiceStatusModule.cs" />
     <Compile Include="Login\LoginModule.cs" />
     <Compile Include="Projections\User.cs" />

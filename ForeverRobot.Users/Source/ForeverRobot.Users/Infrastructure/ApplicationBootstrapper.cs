@@ -7,7 +7,7 @@ using TinyHandler;
 
 namespace ForeverRobot.Users.Infrastructure
 {
-    public class ApplicationBootstrapper : DiscoveryBootstrapper
+    public class ApplicationBootstrapper : StructureMapNancyBootstrapper
     {
         private const string TenantName = "User";
 
