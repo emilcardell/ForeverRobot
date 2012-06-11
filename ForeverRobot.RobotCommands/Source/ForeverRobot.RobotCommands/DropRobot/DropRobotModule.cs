@@ -10,7 +10,7 @@ namespace ForeverRobot.RobotCommands.DropRobot
 {
     public class DropRobotModule : NancyModule
     {
-        public DropRobotModule(IDocumentSession documentSession)
+        public DropRobotModule()
         {
             Post["/robot/command/drop"] = parameters =>
             {
@@ -20,7 +20,8 @@ namespace ForeverRobot.RobotCommands.DropRobot
                 if (!validationResult.IsValid)
                     return HttpStatusCode.BadRequest;
 
-                var robotDroppedEvent = RobotDroppedEvent.Create(inputModel.RobotName, inputModel.Longitude,
+                var robotDroppedEvent = RobotDroppedEvent.Create(inputModel.RobotName, 
+                                                                 inputModel.Longitude,
                                                                  inputModel.Latitude);
                 try
                 {

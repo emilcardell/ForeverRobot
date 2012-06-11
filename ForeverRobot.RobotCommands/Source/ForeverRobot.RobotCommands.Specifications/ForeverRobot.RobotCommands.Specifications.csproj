@@ -128,6 +128,7 @@
     <Compile Include="Infrastructure\SpecificationAssemblyContext.cs" />
     <Compile Include="Infrastructure\SpecificationBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_a_robot_is_dropped.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

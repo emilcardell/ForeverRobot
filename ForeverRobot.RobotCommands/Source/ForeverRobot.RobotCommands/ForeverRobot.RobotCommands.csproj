@@ -99,6 +99,7 @@
     <Compile Include="Infrastructure\DiscoveryBootstrapper.cs" />
     <Compile Include="Infrastructure\RavenDbBootstrapper.cs" />
     <Compile Include="Infrastructure\ServiceStatusModule.cs" />
+    <Compile Include="Projection\RobotPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

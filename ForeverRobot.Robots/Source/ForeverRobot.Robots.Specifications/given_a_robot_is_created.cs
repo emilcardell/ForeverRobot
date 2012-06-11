@@ -1,10 +1,9 @@
-﻿using ForeverRobot.Robot.Specification;
-using ForeverRobot.Robots.Specifications.Infrastructure;
+﻿using ForeverRobot.Robots.Specifications.Infrastructure;
 using Machine.Specifications;
 using Nancy;
 using Nancy.Testing;
 
-namespace ForeverRobot.Robots.Specification
+namespace ForeverRobot.Robots.Specifications
 {
     public class when_a_robot_is_created
     {
