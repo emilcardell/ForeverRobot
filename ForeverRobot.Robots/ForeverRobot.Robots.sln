@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.Robots", "ForeverRobot.Robots\ForeverRobot.Robots.csproj", "{190984DE-EEF0-4734-B406-99BB8F529D18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.Robots", "Source\ForeverRobot.Robots\ForeverRobot.Robots.csproj", "{190984DE-EEF0-4734-B406-99BB8F529D18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeverRobot.Robots.Specifications", "Source\ForeverRobot.Robots.Specifications\ForeverRobot.Robots.Specifications.csproj", "{A325475D-7E62-4960-9BB8-1F3F815E6771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{190984DE-EEF0-4734-B406-99BB8F529D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{190984DE-EEF0-4734-B406-99BB8F529D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{190984DE-EEF0-4734-B406-99BB8F529D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A325475D-7E62-4960-9BB8-1F3F815E6771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A325475D-7E62-4960-9BB8-1F3F815E6771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A325475D-7E62-4960-9BB8-1F3F815E6771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A325475D-7E62-4960-9BB8-1F3F815E6771}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
