@@ -6,7 +6,7 @@ namespace ForeverRobot.RobotCommands.Infrastructure
     {
         public ServiceStatusModule()
         {
-            Get["/"] = _ => { return "Forever Robot - RobotCommand service is up and running."; };
+            Get["/"] = _ => { return "Forever Robot - Position service is up and running."; };
         }
     }
 }
