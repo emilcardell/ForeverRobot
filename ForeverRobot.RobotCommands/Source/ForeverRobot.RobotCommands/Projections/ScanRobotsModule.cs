@@ -34,7 +34,9 @@ namespace ForeverRobot.RobotCommands.Projections
                     documentSession.Query<RobotPosition>().Customize(x => x.WaitForNonStaleResultsAsOfNow()).Where(
                         r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-5)).ToList();
 
-                return Response.AsJson(robotsScanResult.ToArray());
+                var response = Response.AsJson(robotsScanResult.ToArray());
+                response.Headers.Add("Access-Control-Allow-Origin", "*");
+                return response;
             };
         }
     }
