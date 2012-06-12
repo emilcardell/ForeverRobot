@@ -30,13 +30,11 @@ namespace ForeverRobot.RobotCommands.Projections
 
             Get["/scanAllRobots/"] = parameters =>
             {
-                var inputModel = this.Bind<CreateScanRobotsInputModule>();
-
                 var robotsScanResult =
                     documentSession.Query<RobotPosition>().Where(
-                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-10));
+                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-10)).ToList();
 
-                return Response.AsJson(robotsScanResult.Where(r => r.RobotName != inputModel.RobotName).ToArray());
+                return Response.AsJson(robotsScanResult.ToArray());
             };
         }
     }
