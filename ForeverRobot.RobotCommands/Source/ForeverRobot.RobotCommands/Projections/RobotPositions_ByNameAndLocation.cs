@@ -11,7 +11,7 @@ namespace ForeverRobot.RobotCommands.Projections
         public RobotPositions_ByNameAndLocation()
         {
             Map = robotPosition => from r in robotPosition
-                                 select new {r.RobotName, r.Online, LatestUpdate = r.LastUpdate , _ = SpatialIndex.Generate(r.Latitude, r.Longitude)};
+                                 select new {r.RobotName, r.Online, r.LastUpdate , _ = SpatialIndex.Generate(r.Latitude, r.Longitude)};
         }
     }
 }

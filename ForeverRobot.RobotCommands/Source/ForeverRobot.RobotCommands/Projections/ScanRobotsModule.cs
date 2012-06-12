@@ -10,6 +10,8 @@ namespace ForeverRobot.RobotCommands.Projections
 {
     public class ScanRobotsModule : NancyModule 
     {
+      
+
         public ScanRobotsModule(IDocumentSession documentSession)
         {
             Get["/scanRobots/"] = parameters =>
@@ -17,11 +19,22 @@ namespace ForeverRobot.RobotCommands.Projections
                 var inputModel = this.Bind<CreateScanRobotsInputModule>();
 
                 var robotsScanResult =
-                    documentSession.Advanced.LuceneQuery<RobotPosition>("RobotLocations/ByNameAndPosition")
+                    documentSession.Advanced.LuceneQuery<RobotPosition>("RobotPositions/ByNameAndLocation")
                         .WhereEquals("Online", true)
                         .WhereGreaterThan("LastUpdate", DateTime.Now.AddMinutes(-1))
-                        .WithinRadiusOf(radius: 2, latitude: inputModel.Latitude, longitude: inputModel.Longitude)
+                        .WithinRadiusOf(radius: 10, latitude: inputModel.Latitude, longitude: inputModel.Longitude)
                         .ToList();
+
+                return Response.AsJson(robotsScanResult.Where(r => r.RobotName != inputModel.RobotName).ToArray());
+            };
+
+            Get["/scanAllRobots/"] = parameters =>
+            {
+                var inputModel = this.Bind<CreateScanRobotsInputModule>();
+
+                var robotsScanResult =
+                    documentSession.Query<RobotPosition>().Where(
+                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-10));
 
                 return Response.AsJson(robotsScanResult.Where(r => r.RobotName != inputModel.RobotName).ToArray());
             };
