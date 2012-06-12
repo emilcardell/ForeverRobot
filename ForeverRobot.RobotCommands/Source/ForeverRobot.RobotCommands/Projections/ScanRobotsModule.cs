@@ -31,8 +31,8 @@ namespace ForeverRobot.RobotCommands.Projections
             Get["/scanAllRobots/"] = parameters =>
             {
                 var robotsScanResult =
-                    documentSession.Query<RobotPosition>().Where(
-                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-10)).ToList();
+                    documentSession.Query<RobotPosition>().Customize(x => x.WaitForNonStaleResultsAsOfNow()).Where(
+                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-30)).ToList();
 
                 return Response.AsJson(robotsScanResult.ToArray());
             };

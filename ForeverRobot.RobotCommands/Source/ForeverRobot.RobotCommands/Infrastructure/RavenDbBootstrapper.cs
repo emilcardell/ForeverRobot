@@ -14,7 +14,7 @@ namespace ForeverRobot.RobotCommands.Infrastructure
         {
 
             For<IDocumentStore>().Singleton().Use(CurrentDocumentStore());
-            For<IDocumentSession>().HybridHttpOrThreadLocalScoped().Use(x => x.GetInstance<IDocumentStore>().OpenSession(TenantName));
+            For<IDocumentSession>().HybridHttpOrThreadLocalScoped().Use(x => x.GetInstance<IDocumentStore>().OpenSession());
         }
 
         public IDocumentStore CurrentDocumentStore()
@@ -29,7 +29,7 @@ namespace ForeverRobot.RobotCommands.Infrastructure
             }.Initialize();
 
             documentStore.DatabaseCommands.EnsureDatabaseExists(TenantName);
-            IndexCreation.CreateIndexes(typeof(RobotPositions_ByNameAndLocation).Assembly, documentStore);
+            //IndexCreation.CreateIndexes(typeof(RobotPositions_ByNameAndLocation).Assembly, documentStore);
             
 
             
