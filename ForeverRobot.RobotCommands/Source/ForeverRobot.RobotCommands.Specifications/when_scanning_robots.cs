@@ -42,5 +42,11 @@ namespace ForeverRobot.RobotCommands.Specifications
 
             DetectedRobots = getResult.Body.DeserializeJson<List<RobotPosition>>();
         };
+
+        private It should_find_a_robot = () => DetectedRobots.Count().ShouldBeGreaterThan(0);
+        
     }
+        
+
+      
 }
