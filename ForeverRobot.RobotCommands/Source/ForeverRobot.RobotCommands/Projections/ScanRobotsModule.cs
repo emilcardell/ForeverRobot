@@ -32,7 +32,7 @@ namespace ForeverRobot.RobotCommands.Projections
             {
                 var robotsScanResult =
                     documentSession.Query<RobotPosition>().Customize(x => x.WaitForNonStaleResultsAsOfNow()).Where(
-                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-30)).ToList();
+                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-5)).ToList();
 
                 return Response.AsJson(robotsScanResult.ToArray());
             };
