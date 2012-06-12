@@ -32,7 +32,7 @@ namespace ForeverRobot.RobotCommands.Projections
             {
                 var robotsScanResult =
                     documentSession.Query<RobotPosition>().Customize(x => x.WaitForNonStaleResultsAsOfNow()).Where(
-                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-5)).ToList();
+                        r => r.Online && r.LastUpdate > DateTime.Now.AddMinutes(-1)).ToList();
 
                 var response = Response.AsJson(robotsScanResult.ToArray());
                 response.Headers.Add("Access-Control-Allow-Origin", "*");
