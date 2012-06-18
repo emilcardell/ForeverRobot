@@ -1,11 +1,15 @@
-﻿using Raven.Client;
+﻿using ForeverRobot.Position.Projections;
+using Raven.Client;
 using Raven.Client.Document;
+using Raven.Client.Extensions;
+using Raven.Client.Indexes;
 using StructureMap.Configuration.DSL;
 
-namespace ForeverRobot.Users.Infrastructure
+namespace ForeverRobot.Position.Infrastructure
 {
     public class RavenDbBootstrapper : Registry
     {
+        private const string TenantName = "Position";
         public RavenDbBootstrapper()
         {
 
@@ -23,6 +27,12 @@ namespace ForeverRobot.Users.Infrastructure
                 //    FindTypeTagName = type => typeof(ISiteInformation).IsAssignableFrom(type) ? typeof(ISiteInformation).Name : null
                 //}
             }.Initialize();
+
+            documentStore.DatabaseCommands.EnsureDatabaseExists(TenantName);
+            //IndexCreation.CreateIndexes(typeof(RobotPositions_ByNameAndLocation).Assembly, documentStore);
+            
+
+            
 
             return documentStore;
         }

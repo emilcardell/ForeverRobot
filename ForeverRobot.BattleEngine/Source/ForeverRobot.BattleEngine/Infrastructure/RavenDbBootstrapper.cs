@@ -2,7 +2,7 @@
 using Raven.Client.Document;
 using StructureMap.Configuration.DSL;
 
-namespace ForeverRobot.Users.Infrastructure
+namespace ForeverRobot.BattleEngine.Infrastructure
 {
     public class RavenDbBootstrapper : Registry
     {

@@ -1,0 +1,50 @@
+﻿using System;
+using ForeverRobot.Position.Projections;
+using Raven.Client;
+using TinyHandler;
+using ForeverRobot.Position.Projections;
+
+
+namespace ForeverRobot.Position.DropRobot
+{
+    public class RobotDroppedEventHandler: HandlerModule<RobotDroppedEvent>
+    {
+
+        public RobotDroppedEventHandler()
+        {
+            
+        }
+
+        public RobotDroppedEventHandler(IDocumentStore documentStore)
+        {
+            Process = robotDroppedEvent =>
+            {
+                using (var documentSession = documentStore.OpenSession())
+                {
+                    documentSession.Store(robotDroppedEvent);
+                    documentSession.SaveChanges();
+                }
+            };
+
+            Dispatch = robotDroppedEvent =>
+            {
+
+                using (var documentSession = documentStore.OpenSession())
+                {
+                    var robotPosition = new RobotPosition()
+                    {
+                        RobotName = robotDroppedEvent.RobotName,
+                        LastUpdate = robotDroppedEvent.Occurred,
+                        Latitude = robotDroppedEvent.Latitude,
+                        Longitude = robotDroppedEvent.Longitude,
+                        Online = true
+                    };
+
+                    documentSession.Store(robotPosition);
+                    documentSession.SaveChanges();
+                }
+
+            };
+        }
+    }
+}
