@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using Nancy.ModelBinding;
 
 namespace ForeverRobot.BattleEngine.RobotFireAtRobot
 {
@@ -8,7 +9,7 @@ namespace ForeverRobot.BattleEngine.RobotFireAtRobot
         {
             Post["RobotFireAtRobot"] = parameters =>
             {
-                var command = new RobotFireAtRobotCommand();
+                var command = this.Bind<RobotFireAtRobotCommand>();
                 RobotFireAtRobotEngine.RobotFireAtRobotCommandQueue.Enqueue(command);
             };
         }
